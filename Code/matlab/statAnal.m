@@ -7,7 +7,9 @@ filename = 'data';
 g = 9.80665;
 ranges = [16384, 8192, 4096, 2048];
 
+
 Gs = [];
+sigGs = [];
 
 accXs = [];
 accYs = [];
@@ -20,6 +22,10 @@ stdZs = [];
 verbose = false;
 
 for ASF = 0:3
+%    Gs = [];
+%    stdXs = [];
+%    stdYs = [];
+%    stdZs = [];
     for n = 1:3
         % data import and creation of variance array
         rawData = readmatrix(strcat(dataPosition, filename, int2str(ASF), int2str(n), '.txt'));
@@ -81,28 +87,44 @@ for ASF = 0:3
         g_abs = sqrt(avgX^2 + avgY^2 + avgZ^2);
         Gs = [Gs, g_abs];
 
-        stdXs = [stdXs, stdX];
-        stdYs = [stdYs, stdY];
-        stdZs = [stdZs, stdZ];
+        stdXs = [stdXs, mean(stdX)];
+        stdYs = [stdYs, mean(stdY)];
+        stdZs = [stdZs, mean(stdZ)];
+
+%        sigG = sqrt(stdX^2 + stdY^2 + stdZ^2);
+        sigG = sqrt( ( (avgX^2*mean(stdX))/(2*g_abs) )^2 + ( (avgY^2*mean(stdY))/(2*g_abs) )^2 + ( (avgZ^2*mean(stdZ))/(2*g_abs) )^2 );
+        sigGs = [sigGs, sigG];
+
     end
 
     % present the average standard deviations both in m/s^2 and in units of g
 
     fprintf('ASF: %d\n', ASF);
 
-    fprintf('Approximate value of g mostly aligned on axis 1 %f m/s^2 or %f g\n', Gs(ASF+1), Gs(1)/g);
-    fprintf('Approximate value of g mostly aligned on axis 2 %f m/s^2 or %f g\n', Gs(ASF+2), Gs(2)/g);
-    fprintf('Approximate value of g mostly aligned on axis 3 %f m/s^2 or %f g\n', Gs(ASF+3), Gs(3)/g);
+    fprintf('Approximate value of g mostly aligned on axis 1 %f m/s^2 or %f g\n', Gs(ASF+1), Gs(ASF+1)/g);
+    fprintf('Approximate value of g mostly aligned on axis 2 %f m/s^2 or %f g\n', Gs(ASF+2), Gs(ASF+2)/g);
+    fprintf('Approximate value of g mostly aligned on axis 3 %f m/s^2 or %f g\n', Gs(ASF+3), Gs(ASF+3)/g);
     %fprintf('Averge acceration accX: %f m/s^2 or %f g\n', mean(accXs), mean(accXs)/g);
     %fprintf('Averge acceration accY: %f m/s^2 or %f g\n', mean(accYs), mean(accYs)/g);
     %fprintf('Averge acceration accZ: %f m/s^2 or %f g\n\n', mean(accZs), mean(accZs)/g);
 
-    fprintf('Average standard deviation accX: %f m/s^2 or %f g\n', mean(stdXs), mean(stdXs)/g);
-    fprintf('Average standard deviation accY: %f m/s^2 or %f g\n', mean(stdYs), mean(stdYs)/g);
-    fprintf('Average standard deviation accZ: %f m/s^2 or %f g\n', mean(stdZs), mean(stdZs)/g);
+    fprintf('Average standard deviation accX: %f m/s^2 or %f g\n', stdXs(ASF+1), stdXs(ASF+1)/g);
+    fprintf('Average standard deviation accY: %f m/s^2 or %f g\n', stdYs(ASF+2), stdYs(ASF+2)/g);
+    fprintf('Average standard deviation accZ: %f m/s^2 or %f g\n', stdZs(ASF+3), stdZs(ASF+3)/g);
 
     fprintf('Sensor sensitivity: %f m/s^2 or %f g\n\n', sigmaAcc, sigmaAcc/g);
+
+
+%    fileID = fopen(strcat(dataPosition, 'statsAnal', '.txt'), 'a');
+%    fprintf(fileID, 'ASF: %d\n', ASF);
+%    fprintf()
+
+    
+
 end
 
+
+T = table([0 0 0 1 1 1 2 2 2 3 3 3]', Gs', sigGs', 'VariableNames', {'ASF', 'g', 'sigmaG'});
+writetable(T, strcat(dataPosition, 'statsAnal', '.txt'), 'WriteVariableNames', true);
 
 

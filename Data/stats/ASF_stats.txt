@@ -2,34 +2,34 @@ ASF: 0
 Approximate value of g mostly aligned on axis 1 9.129065 m/s^2 or 0.930906 g
 Approximate value of g mostly aligned on axis 2 9.771059 m/s^2 or 0.996371 g
 Approximate value of g mostly aligned on axis 3 9.458983 m/s^2 or 0.964548 g
-Average standard deviation accX: 0.062000 m/s^2 or 0.006322 g
-Average standard deviation accY: 0.035549 m/s^2 or 0.003625 g
-Average standard deviation accZ: 0.086976 m/s^2 or 0.008869 g
+Average standard deviation accX: 0.060091 m/s^2 or 0.006128 g
+Average standard deviation accY: 0.036653 m/s^2 or 0.003738 g
+Average standard deviation accZ: 0.076983 m/s^2 or 0.007850 g
 Sensor sensitivity: 0.000599 m/s^2 or 0.000061 g
 
 ASF: 1
-Approximate value of g mostly aligned on axis 1 9.129065 m/s^2 or 0.930906 g
-Approximate value of g mostly aligned on axis 2 9.771059 m/s^2 or 0.996371 g
-Approximate value of g mostly aligned on axis 3 9.458983 m/s^2 or 0.964548 g
-Average standard deviation accX: 0.056172 m/s^2 or 0.005728 g
-Average standard deviation accY: 0.035891 m/s^2 or 0.003660 g
-Average standard deviation accZ: 0.087526 m/s^2 or 0.008925 g
+Approximate value of g mostly aligned on axis 1 9.771059 m/s^2 or 0.996371 g
+Approximate value of g mostly aligned on axis 2 9.458983 m/s^2 or 0.964548 g
+Approximate value of g mostly aligned on axis 3 9.074256 m/s^2 or 0.925317 g
+Average standard deviation accX: 0.088586 m/s^2 or 0.009033 g
+Average standard deviation accY: 0.032163 m/s^2 or 0.003280 g
+Average standard deviation accZ: 0.088291 m/s^2 or 0.009003 g
 Sensor sensitivity: 0.001197 m/s^2 or 0.000122 g
 
 ASF: 2
-Approximate value of g mostly aligned on axis 1 9.129065 m/s^2 or 0.930906 g
-Approximate value of g mostly aligned on axis 2 9.771059 m/s^2 or 0.996371 g
-Approximate value of g mostly aligned on axis 3 9.458983 m/s^2 or 0.964548 g
-Average standard deviation accX: 0.059917 m/s^2 or 0.006110 g
-Average standard deviation accY: 0.038402 m/s^2 or 0.003916 g
-Average standard deviation accZ: 0.106232 m/s^2 or 0.010833 g
+Approximate value of g mostly aligned on axis 1 9.458983 m/s^2 or 0.964548 g
+Approximate value of g mostly aligned on axis 2 9.074256 m/s^2 or 0.925317 g
+Approximate value of g mostly aligned on axis 3 9.763154 m/s^2 or 0.995565 g
+Average standard deviation accX: 0.037322 m/s^2 or 0.003806 g
+Average standard deviation accY: 0.032578 m/s^2 or 0.003322 g
+Average standard deviation accZ: 0.087312 m/s^2 or 0.008903 g
 Sensor sensitivity: 0.002394 m/s^2 or 0.000244 g
 
 ASF: 3
-Approximate value of g mostly aligned on axis 1 9.129065 m/s^2 or 0.930906 g
-Approximate value of g mostly aligned on axis 2 9.771059 m/s^2 or 0.996371 g
-Approximate value of g mostly aligned on axis 3 9.458983 m/s^2 or 0.964548 g
-Average standard deviation accX: 0.057402 m/s^2 or 0.005853 g
-Average standard deviation accY: 0.038392 m/s^2 or 0.003915 g
-Average standard deviation accZ: 0.100255 m/s^2 or 0.010223 g
+Approximate value of g mostly aligned on axis 1 9.074256 m/s^2 or 0.925317 g
+Approximate value of g mostly aligned on axis 2 9.763154 m/s^2 or 0.995565 g
+Approximate value of g mostly aligned on axis 3 9.440125 m/s^2 or 0.962625 g
+Average standard deviation accX: 0.044532 m/s^2 or 0.004541 g
+Average standard deviation accY: 0.033086 m/s^2 or 0.003374 g
+Average standard deviation accZ: 0.088626 m/s^2 or 0.009037 g
 Sensor sensitivity: 0.004788 m/s^2 or 0.000488 g
