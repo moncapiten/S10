@@ -2,7 +2,7 @@ clear all;
 
 dataPosition = '../../Data/stats/';
 filename = 'statAnal_raw';
-ASF = 0;
+ASF = 3;
 
 % data import and creation of variance array
 rawData = readmatrix(strcat(dataPosition, filename, int2str(ASF), '.txt'));
@@ -68,8 +68,10 @@ fontsize(14, "points");
 lowerBound = [14, 80, 150];
 upperBound = [74, 140, 210];
 
-lowerBound = [0, 70, 140];
-upperBound = [60, 130, 200];
+if ASF ~= 0
+    lowerBound = [0, 70, 140];
+    upperBound = [60, 130, 200];
+end
 
 
 
@@ -78,6 +80,6 @@ for i = 1:3
     endIndex = find(tt < upperBound(i), 1, "last");
 
     T = table(tt(initIndex:endIndex), accX(initIndex:endIndex), accY(initIndex:endIndex), accZ(initIndex:endIndex), 'VariableNames', {'Time', 'accX', 'accY', 'accZ'});
-    writetable(T, strcat(dataPosition, 'data', int2str(i), '.txt'));
+    writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
 end
 
