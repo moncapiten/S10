@@ -1,0 +1,11 @@
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-F_Cu.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-B_Cu.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-F_Paste.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-B_Paste.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-F_Silkscreen.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-B_Silkscreen.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-F_Mask.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-B_Mask.gbr'.
+Plotted to 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-Edge_Cuts.gbr'.
+Created Gerber job file 'C:\Users\monca\Desktop\All\Uni\3°\TD\ColSci\S10\PCB\NANO_MPU_SD_2Layers\gerber2Layers\NANO_MPU_SD_2Layers-job.gbrjob'.
+Info: Done.

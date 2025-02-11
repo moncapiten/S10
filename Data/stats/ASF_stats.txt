@@ -1,0 +1,23 @@
+ASF: 0
+Average standard deviation accX: 0.062000 m/s^2 or 0.006322 g
+Average standard deviation accY: 0.035549 m/s^2 or 0.003625 g
+Average standard deviation accZ: 0.086976 m/s^2 or 0.008869 g
+Sensor sensitivity: 0.000599 m/s^2 or 0.000061 g
+
+ASF: 1
+Average standard deviation accX: 0.056172 m/s^2 or 0.005728 g
+Average standard deviation accY: 0.035891 m/s^2 or 0.003660 g
+Average standard deviation accZ: 0.087526 m/s^2 or 0.008925 g
+Sensor sensitivity: 0.001197 m/s^2 or 0.000122 g
+
+ASF: 2
+Average standard deviation accX: 0.059917 m/s^2 or 0.006110 g
+Average standard deviation accY: 0.038402 m/s^2 or 0.003916 g
+Average standard deviation accZ: 0.106232 m/s^2 or 0.010833 g
+Sensor sensitivity: 0.002394 m/s^2 or 0.000244 g
+
+ASF: 3
+Average standard deviation accX: 0.057402 m/s^2 or 0.005853 g
+Average standard deviation accY: 0.038392 m/s^2 or 0.003915 g
+Average standard deviation accZ: 0.100255 m/s^2 or 0.010223 g
+Sensor sensitivity: 0.004788 m/s^2 or 0.000488 g
