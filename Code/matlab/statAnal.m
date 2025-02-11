@@ -7,6 +7,12 @@ filename = 'data';
 g = 9.80665;
 ranges = [16384, 8192, 4096, 2048];
 
+Gs = [];
+
+accXs = [];
+accYs = [];
+accZs = [];
+
 stdXs = [];
 stdYs = [];
 stdZs = [];
@@ -69,6 +75,12 @@ for ASF = 0:3
             fprintf('Percentage accZ: %f\n\n', percentZ);
         end
 
+        %accXs = [accXs, avgX];
+        %accYs = [accYs, avgY];
+        %accZs = [accZs, avgZ];
+        g_abs = sqrt(avgX^2 + avgY^2 + avgZ^2);
+        Gs = [Gs, g_abs];
+
         stdXs = [stdXs, stdX];
         stdYs = [stdYs, stdY];
         stdZs = [stdZs, stdZ];
@@ -77,6 +89,14 @@ for ASF = 0:3
     % present the average standard deviations both in m/s^2 and in units of g
 
     fprintf('ASF: %d\n', ASF);
+
+    fprintf('Approximate value of g mostly aligned on axis 1 %f m/s^2 or %f g\n', Gs(ASF+1), Gs(1)/g);
+    fprintf('Approximate value of g mostly aligned on axis 2 %f m/s^2 or %f g\n', Gs(ASF+2), Gs(2)/g);
+    fprintf('Approximate value of g mostly aligned on axis 3 %f m/s^2 or %f g\n', Gs(ASF+3), Gs(3)/g);
+    %fprintf('Averge acceration accX: %f m/s^2 or %f g\n', mean(accXs), mean(accXs)/g);
+    %fprintf('Averge acceration accY: %f m/s^2 or %f g\n', mean(accYs), mean(accYs)/g);
+    %fprintf('Averge acceration accZ: %f m/s^2 or %f g\n\n', mean(accZs), mean(accZs)/g);
+
     fprintf('Average standard deviation accX: %f m/s^2 or %f g\n', mean(stdXs), mean(stdXs)/g);
     fprintf('Average standard deviation accY: %f m/s^2 or %f g\n', mean(stdYs), mean(stdYs)/g);
     fprintf('Average standard deviation accZ: %f m/s^2 or %f g\n', mean(stdZs), mean(stdZs)/g);

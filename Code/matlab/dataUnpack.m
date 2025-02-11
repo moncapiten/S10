@@ -27,43 +27,7 @@ sigmaAcc = 1/ranges(ASF+1) * 9.80665;
 
 
 
-t = tiledlayout(2, 2, "TileSpacing","tight", "Padding","tight");
 
-ax1 = nexttile([1 2]);
-errorbar(tt, accX, repelem(sigmaAcc, length(accX)), 'o', Color = "#0027bd");
-hold on
-errorbar(tt, accY, repelem(sigmaAcc, length(accY)), 'o', Color = "#ff0000");
-errorbar(tt, accZ, repelem(sigmaAcc, length(accZ)), 'o', Color = "#00ff00");
-hold off
-grid on
-grid minor
-
-
-ax2 = nexttile([1 2]);
-%plot(tt, sim_vo, Color = "magenta");
-ylim([-1, 6]);
-grid on
-grid minor
-
-% 14-74 ; 80-140 ; 150-210
-
-
-%legend(ax1, 'Clock', 'Data', 'Clock Transisions', 'Data at Clock Transition', Location= 'ne')
-legend(ax1, 'Clock', 'Data', 'Data at Clock Transition', 'Location', 'ne', 'Interpreter', 'latex')
-ylabel(ax1, 'Voltage [V]', 'Interpreter', 'latex')
-%xlabel(ax1, 'Time [s]', 'Interpreter', 'latex')
-
-legend(ax2, 'Simulated Data', Location= 'ne')
-ylabel(ax2, 'Simulated Voltage [V]', 'Interpreter', 'latex')
-xlabel(ax2, 'Time [s]', 'Interpreter', 'latex')
-
-linkaxes([ax1, ax2], 'x');
-linkaxes([ax1, ax2], 'y');
-
-hold off
-fontsize(14, "points");
-
-%title(t, strcat('Measured and Simulated LFSR cycles - n =   ', int2str(n)), 'FontSize', 18, 'Interpreter', 'latex');
 
 lowerBound = [14, 80, 150];
 upperBound = [74, 140, 210];
@@ -75,11 +39,76 @@ end
 
 
 
+
+
+
+
+
+
+t = tiledlayout(2, 2, "TileSpacing","tight", "Padding","tight");
+
+ax1 = nexttile([1 2]);
+errorbar(tt, accX, repelem(sigmaAcc, length(accX)), 'o', Color = "#001111");
+hold on
+errorbar(tt, accY, repelem(sigmaAcc, length(accY)), 'o', Color = "#110000");
+errorbar(tt, accZ, repelem(sigmaAcc, length(accZ)), 'o', Color = "#001100");
+hold off
+grid on
+grid minor
+
+ax2 = nexttile([1 2]);
+%hold on
 for i = 1:3
     initIndex = find(tt > lowerBound(i), 1);
     endIndex = find(tt < upperBound(i), 1, "last");
 
     T = table(tt(initIndex:endIndex), accX(initIndex:endIndex), accY(initIndex:endIndex), accZ(initIndex:endIndex), 'VariableNames', {'Time', 'accX', 'accY', 'accZ'});
-    writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
-end
+%    writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
 
+
+
+
+
+    errorbar(tt(initIndex:endIndex), accX(initIndex:endIndex), repelem(sigmaAcc, endIndex-initIndex+1), 'o', Color = "#0027bd");
+    if( i == 1)
+        hold on
+    end
+%    hold on
+    errorbar(tt(initIndex:endIndex), accY(initIndex:endIndex), repelem(sigmaAcc, endIndex-initIndex+1), 'o', Color = "#ff0000");
+    errorbar(tt(initIndex:endIndex), accZ(initIndex:endIndex), repelem(sigmaAcc, endIndex-initIndex+1), 'o', Color = "#00ff00");
+    
+
+
+
+
+
+
+
+
+
+end
+hold off
+grid on
+grid minor
+
+
+
+% 14-74 ; 80-140 ; 150-210
+
+
+%legend(ax1, 'Clock', 'Data', 'Clock Transisions', 'Data at Clock Transition', Location= 'ne')
+%legend(ax1, 'Clock', 'Data', 'Data at Clock Transition', 'Location', 'ne', 'Interpreter', 'latex')
+%ylabel(ax1, 'Voltage [V]', 'Interpreter', 'latex')
+%xlabel(ax1, 'Time [s]', 'Interpreter', 'latex')
+
+%legend(ax2, 'Simulated Data', Location= 'ne')
+%ylabel(ax2, 'Simulated Voltage [V]', 'Interpreter', 'latex')
+%xlabel(ax2, 'Time [s]', 'Interpreter', 'latex')
+
+linkaxes([ax1, ax2], 'x');
+linkaxes([ax1, ax2], 'y');
+
+hold off
+fontsize(14, "points");
+
+title(t, strcat('Measured data on all 3 axis - ASF =   ', int2str(ASF)), 'FontSize', 18, 'Interpreter', 'latex');
