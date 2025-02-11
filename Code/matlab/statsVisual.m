@@ -64,20 +64,20 @@ for j = 0:2;
     grid minor
 end
 
-title(t, 'Comparison of standard deviation and drift across axis and AFSs - static case', 'Interpreter', 'latex');
+title(t, 'Comparison of standard deviation and drift across axis and AFSs - static case', 'Interpreter', 'latex', 'fontsize', 18);
 
-xlabel(axs, 'Arbitrary', 'Interpreter', 'latex');
-ylabel(axs(1), '$ m/s^2 $', 'Interpreter', 'latex');
+xlabel(axs, 'Arbitrary', 'Interpreter', 'latex', 'fontsize', 14);
+ylabel(axs(1), '$ m/s^2 $', 'Interpreter', 'latex', 'fontsize', 14);
 %yticklabels(axs(2), []);
 %yticklabels(axs(3), []);
 
 
-title(axs(1), 'X Axis', 'Interpreter', 'latex');
-title(axs(2), 'Y Axis', 'Interpreter', 'latex');
-title(axs(3), 'Z Axis', 'Interpreter', 'latex');
+title(axs(1), 'X Axis', 'Interpreter', 'latex', 'fontsize', 14);
+title(axs(2), 'Y Axis', 'Interpreter', 'latex', 'fontsize', 14);
+title(axs(3), 'Z Axis', 'Interpreter', 'latex', 'fontsize', 14);
 
 xlim(axs, [0 5]);
 linkaxes(axs, 'y');
 
-legend(axs(3), 'ASF = 0', 'ASF = 1', 'ASF = 2', 'ASF = 3', 'Location', 'ne', 'interpreter', 'latex');
-
+legend(axs(3), 'ASF = 0', 'ASF = 1', 'ASF = 2', 'ASF = 3', 'Location', 'ne', 'interpreter', 'latex', 'fontsize', 14);
+%fontsize(t, 14, "points");
