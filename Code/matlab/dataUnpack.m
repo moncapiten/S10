@@ -2,7 +2,7 @@ clear all;
 
 dataPosition = '../../Data/stats/';
 filename = 'statAnal_raw';
-ASF = 3;
+ASF = 2;
 
 % data import and creation of variance array
 rawData = readmatrix(strcat(dataPosition, filename, int2str(ASF), '.txt'));
@@ -101,7 +101,7 @@ grid minor
 %ylabel(ax1, 'Voltage [V]', 'Interpreter', 'latex')
 %xlabel(ax1, 'Time [s]', 'Interpreter', 'latex')
 
-%legend(ax2, 'Simulated Data', Location= 'ne')
+legend(ax2, 'X', 'Y', 'Z', Location= 'ne')
 %ylabel(ax2, 'Simulated Voltage [V]', 'Interpreter', 'latex')
 %xlabel(ax2, 'Time [s]', 'Interpreter', 'latex')
 
