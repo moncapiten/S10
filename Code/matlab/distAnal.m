@@ -1,6 +1,4 @@
 % data import and organization
-%rawData1 = readmatrix('./Data/data006.txt');
-%rawData2 = readmatrix('./Data/data007.txt');
 
 loc = 'Pisa';
 dataPosition = strcat('../../Data/stats/drift&cali/', loc, '/');
