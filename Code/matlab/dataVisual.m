@@ -1,4 +1,4 @@
-clear all;
+clear all; %#ok<*CLALL>
 
 dataPosition = '../../Data/tiltMeasure/';
 filename = 'data4';
