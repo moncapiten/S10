@@ -1,6 +1,9 @@
+% to be used AFTER statsAnal.m
+
 clear all;
 
-dataPosition = '../../Data/stats/drift&cali/';
+loc = 'Pisa';
+dataPosition = strcat('../../Data/stats/drift&cali/', loc, '/');
 filename = 'statsAnal';
 
 g = 9.80665;
@@ -16,23 +19,6 @@ sigmaG = rawData(:, 3);
 
 
 colors = ["#0027bd", "#ff0000", "#00ff00", "#0077aa"];
-
-
-%{
-for i = 1:length(ASF)
-
-
-    errorbar(i, Gs(i), sigGs(i));
-    if i == 1
-        hold on
-    end
-    i
-
-
-
-
-end
-%}
 
 %order is  Z Y X
 %{
@@ -67,7 +53,7 @@ end
 title(t, 'Comparison of standard deviation and drift across axis and AFSs - static case', 'Interpreter', 'latex', 'fontsize', 18);
 
 xlabel(axs, 'Arbitrary', 'Interpreter', 'latex', 'fontsize', 14);
-ylabel(axs(1), '$ m/s^2 $', 'Interpreter', 'latex', 'fontsize', 14);
+ylabel(axs(1), 'Acceleration $ [m/s^2] $', 'Interpreter', 'latex', 'fontsize', 14);
 %yticklabels(axs(2), []);
 %yticklabels(axs(3), []);
 

@@ -1,9 +1,11 @@
+% to be used on raw data
+
 clear all;
 
 loc = 'Pisa';
 dataPosition = strcat('../../Data/stats/drift&cali/', loc, '/');
 filename = 'statAnal_raw';
-ASF = 0;
+ASF = 3;
 
 
 % data import and creation of variance array
@@ -30,7 +32,7 @@ sigmaAcc = 1/ranges(ASF+1) * 9.80665;
 
 
 
-if loc == 'Pombia'
+if strcmp(loc, 'Pombia')
     lowerBound = [14, 80, 150];
     upperBound = [74, 140, 210];
 
@@ -39,7 +41,7 @@ if loc == 'Pombia'
         lowerBound = [0, 70, 140];
         upperBound = [60, 130, 200];
     end
-elseif loc == 'Pisa'
+elseif strcmp(loc, 'Pisa')
     lowerBound = [0, 70, 140];
     upperBound = [60, 130, 200];
 end
@@ -70,7 +72,7 @@ for i = 1:3
     endIndex = find(tt < upperBound(i), 1, "last");
 
     T = table(tt(initIndex:endIndex), accX(initIndex:endIndex), accY(initIndex:endIndex), accZ(initIndex:endIndex), 'VariableNames', {'Time', 'accX', 'accY', 'accZ'});
-    writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
+    %writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
 
 
 
