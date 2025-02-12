@@ -36,7 +36,7 @@ grid on
 grid minor
 axs = [axs, nexttile([1 1])];
 for i = 1:3
-    errorbar(temps(i), accZs(i), stdZs(i), 'Color', colors(i));
+    errorbar(temps(i), accXs(i), stdZs(i), 'Color', colors(i));
     if i == 1
         hold on
     end    
@@ -69,8 +69,9 @@ grid minor
 
 title(t, 'Comparison of standard deviation and drift across axis and temperatures - static case', 'Interpreter', 'latex', 'fontsize', 18);
 
-xlabel(axs, 'Temperature [C]', 'Interpreter', 'latex', 'fontsize', 14);
-ylabel(axs(1), '$ m/s^2 $', 'Interpreter', 'latex', 'fontsize', 14);
+xlabel(axs(3), 'Temperature [C]', 'Interpreter', 'latex', 'fontsize', 14);
+xlabel(axs(4), 'Temperature [C]', 'Interpreter', 'latex', 'fontsize', 14);
+ylabel(axs, '$ m/s^2 $', 'Interpreter', 'latex', 'fontsize', 14);
 %yticklabels(axs(2), []);
 %yticklabels(axs(3), []);
 
@@ -78,10 +79,12 @@ ylabel(axs(1), '$ m/s^2 $', 'Interpreter', 'latex', 'fontsize', 14);
 title(axs(1), 'G', 'Interpreter', 'latex', 'fontsize', 14);
 title(axs(2), 'X Axis', 'Interpreter', 'latex', 'fontsize', 14);
 title(axs(3), 'Y Axis', 'Interpreter', 'latex', 'fontsize', 14);
-title(axs(3), 'Z Axis', 'Interpreter', 'latex', 'fontsize', 14);
+title(axs(4), 'Z Axis', 'Interpreter', 'latex', 'fontsize', 14);
 
-%xlim(axs, [0 5]);
+
+xlim(axs, [15 65]);
 linkaxes(axs, 'x');
+%linkaxes(axs, 'y');
 
 %legend(axs(3), 'ASF = 0', 'ASF = 1', 'ASF = 2', 'ASF = 3', 'Location', 'ne', 'interpreter', 'latex', 'fontsize', 14);
 %fontsize(t, 14, "points");
