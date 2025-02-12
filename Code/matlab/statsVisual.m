@@ -1,6 +1,6 @@
 clear all;
 
-dataPosition = '../../Data/stats/';
+dataPosition = '../../Data/stats/drift&cali/';
 filename = 'statsAnal';
 
 g = 9.80665;

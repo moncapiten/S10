@@ -1,8 +1,8 @@
 clear all;
 
-dataPosition = '../../Data/stats/';
+dataPosition = '../../Data/stats/drift&cali/';
 filename = 'statAnal_raw';
-ASF = 2;
+ASF = 0;
 
 % data import and creation of variance array
 rawData = readmatrix(strcat(dataPosition, filename, int2str(ASF), '.txt'));
@@ -63,7 +63,7 @@ for i = 1:3
     endIndex = find(tt < upperBound(i), 1, "last");
 
     T = table(tt(initIndex:endIndex), accX(initIndex:endIndex), accY(initIndex:endIndex), accZ(initIndex:endIndex), 'VariableNames', {'Time', 'accX', 'accY', 'accZ'});
-%    writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
+    %writetable(T, strcat(dataPosition, 'data', int2str(ASF), int2str(i), '.txt'));
 
 
 
