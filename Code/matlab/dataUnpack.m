@@ -1,8 +1,12 @@
+% to be used on raw data
+
 clear all;
 
-dataPosition = '../../Data/stats/drift&cali/';
+loc = 'Pisa';
+dataPosition = strcat('../../Data/stats/drift&cali/', loc, '/');
 filename = 'statAnal_raw';
-ASF = 0;
+ASF = 3;
+
 
 % data import and creation of variance array
 rawData = readmatrix(strcat(dataPosition, filename, int2str(ASF), '.txt'));
@@ -28,11 +32,16 @@ sigmaAcc = 1/ranges(ASF+1) * 9.80665;
 
 
 
+if strcmp(loc, 'Pombia')
+    lowerBound = [14, 80, 150];
+    upperBound = [74, 140, 210];
 
-lowerBound = [14, 80, 150];
-upperBound = [74, 140, 210];
 
-if ASF ~= 0
+    if ASF ~= 0
+        lowerBound = [0, 70, 140];
+        upperBound = [60, 130, 200];
+    end
+elseif strcmp(loc, 'Pisa')
     lowerBound = [0, 70, 140];
     upperBound = [60, 130, 200];
 end

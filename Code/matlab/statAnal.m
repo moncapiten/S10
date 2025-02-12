@@ -1,6 +1,9 @@
+% to be used AFTER dataUnpack.m
+
 clear all;
 
-dataPosition = '../../Data/stats/drift&cali/';
+loc = 'Pisa';
+dataPosition = strcat('../../Data/stats/drift&cali/', loc, '/');
 filename = 'data';
 
 
